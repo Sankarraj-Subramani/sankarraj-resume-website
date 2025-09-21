@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankarraj Subramani - Sr. AI QA Automation Lead</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #60a5fa;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(30, 58, 138, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><polygon fill="rgba(255,255,255,0.1)" points="0,200 1000,150 1000,200"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .company {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .duration {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .achievements li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Publications Section */
+        .publications-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .publication-item {
+            background: var(--white);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .publication-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-venue {
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .job-header {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">Sankarraj Subramani</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Sankarraj Subramani</h1>
+            <div class="subtitle">Sr. AI QA Automation Lead | IEEE Senior Member | Open-Source Contributor</div>
+            <p class="description">
+                Leading AI-powered quality assurance innovation with 14+ years of experience in automation, GenAI, and scalable testing frameworks. Advancing national infrastructure in aviation, healthcare, and financial services.
+            </p>
+            <div class="contact-info">
+                <span>📧 Sankarraj.Subramani@united.com</span>
+                <span>📱 +1-210-992-3958</span>
+                <span>📍 Houston, Texas</span>
+            </div>
+            <div class="cta-buttons">
+                <a href="#experience" class="btn btn-primary">View Experience</a>
+                <a href="#projects" class="btn btn-secondary">See Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">QA Automation Lead</div>
+                    <div class="company">United Airlines (via HCL Technologies)</div>
+                </div>
+                <div class="duration">March 2025 – Present</div>
+            </div>
+            <ul class="achievements">
+                <li>Advanced national aviation infrastructure: Led AI-powered QA automation for SpaceX Starlink in-flight Wi-Fi integration, ensuring FAA-compliant digital communication across United Airlines' fleet</li>
+                <li>Developed predictive AI models that simulated satellite handovers and weather-related disruptions, preventing in-flight connectivity loss and supporting FAA NextGen and DHS aviation security mandates</li>
+                <li>Built generative AI frameworks to simulate real-time failure scenarios, enhancing system resilience and reducing weather-induced signal loss by 80%</li>
+                <li>Achieved 30% reduction in system defects and 40% acceleration in user testing cycles through intelligent test orchestration</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">QA Automation Lead</div>
+                    <div class="company">Freddie Mac (via HCL Technologies)</div>
+                </div>
+                <div class="duration">April 2023 – March 2025</div>
+            </div>
+            <ul class="achievements">
+                <li>Strengthened U.S. housing finance systems: Led AI-powered QA initiatives for Freddie Mac's Loan Product Advisor (LPA) and Loan Selling Advisor (LSA)</li>
+                <li>Built generative AI scenario generator that reduced UAT preparation time by 60%, accelerating test coverage and enabling faster mortgage decisions</li>
+                <li>Contributed to over $2 billion in appraisal cost savings and expanded refinancing access to 18,000+ additional borrowers</li>
+                <li>Implemented ML-based defect prediction model that reduced defect leakage by 37%</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">QA Automation Lead</div>
+                    <div class="company">United Services Automobile Association (USAA)</div>
+                </div>
+                <div class="duration">Sept 2019 – March 2023</div>
+            </div>
+            <ul class="achievements">
+                <li>Advanced national defense infrastructure: Led AI-powered QA transformation for digital banking systems serving 13+ million U.S. military personnel and families</li>
+                <li>Designed AI-driven testing framework covering mobile and backend systems, automating 1,500+ complex test cases with 85% coverage</li>
+                <li>Built AI-based negative testing tools using payload mutation and automated API chaining, reducing testing cycles by 50%</li>
+                <li>Improved mission readiness by strengthening digital infrastructure for military families' financial services</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>AI/ML & GenAI Automation</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">GenAI-enabled QA</span>
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">ChromaDB</span>
+                    <span class="skill-tag">HuggingFace</span>
+                    <span class="skill-tag">FAISS</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Test Automation</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Selenium</span>
+                    <span class="skill-tag">TestNG</span>
+                    <span class="skill-tag">Playwright</span>
+                    <span class="skill-tag">Cypress</span>
+                    <span class="skill-tag">Appium</span>
+                    <span class="skill-tag">AutoTestX</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Gherkin</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Cloud & DevOps</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Jenkins</span>
+                    <span class="skill-tag">GitHub Actions</span>
+                    <span class="skill-tag">Maven</span>
+                    <span class="skill-tag">Gradle</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title">Open Source Projects</h2>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-title">AutoTestX</div>
+                <div class="project-description">
+                    AI-Augmented Selenium + TestNG Framework with scalable, plug-and-play architecture, modular POM design, and CI/CD integration via GitHub Actions.
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Sankarraj-Subramani/AutoTestX" class="project-link" target="_blank">GitHub</a>
+                    <a href="https://medium.com/@sankar.raj9/autotestx-df51a7e0bb51" class="project-link" target="_blank">Medium Article</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">GenQAChat-RAG-AI</div>
+                <div class="project-description">
+                    Generative QA Chatbot for Test Engineers using FastAPI, Sentence-Transformers, FAISS, and Next.js/Streamlit for explainable QA guidance.
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Sankarraj-Subramani/GenQAChat-RAG-AI" class="project-link" target="_blank">GitHub</a>
+                    <a href="https://medium.com/@sankar.raj9/genqachat-rag-ai-building-a-specialized-rag-based-qa-knowledge-assistant-with-huggingface-b951e1c6a43c" class="project-link" target="_blank">Medium Article</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">AutoBugPredictX</div>
+                <div class="project-description">
+                    AI-Powered Bug Prediction Engine providing module-level defect probability using pandas/scikit-learn with Streamlit dashboard for risk-based planning.
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Sankarraj-Subramani/AutoBugPredictX" class="project-link" target="_blank">GitHub</a>
+                    <a href="https://medium.com/@sankar.raj9/autobugpredictx-predicting-qa-bugs-using-ai-powered-risk-analytics-df521715779e" class="project-link" target="_blank">Medium Article</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">RAG4HealthQA</div>
+                <div class="project-description">
+                    AI-Powered Healthcare Q&A Assistant delivering explainable answers to public health questions using LangChain, Cohere, and FAISS with WHO/NIH sources.
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Sankarraj-Subramani/RAG4HealthQA" class="project-link" target="_blank">GitHub</a>
+                    <a href="https://medium.com/@sankar.raj9/rag4healthqa-an-ai-powered-healthcare-q-a-assistant-for-the-public-good-c2c1c8014937" class="project-link" target="_blank">Medium Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section">
+        <h2 class="section-title">Publications & Thought Leadership</h2>
+        
+        <ul class="publications-list">
+            <li class="publication-item">
+                <div class="publication-title">Predicting Future Activities of a Person and Human Trajectory using Deep Neural Network</div>
+                <div class="publication-venue">TechRxiv - Peer-reviewed preprint</div>
+                <p>Proposed a multi-task, end-to-end deep neural network architecture that jointly predicts human trajectories and activities from video data, achieving state-of-the-art results on benchmark datasets.</p>
+                <div class="project-links">
+                    <a href="https://techrxiv.org/prediction" class="project-link" target="_blank">View Publication</a>
+                </div>
+            </li>
+
+            <li class="publication-item">
+                <div class="publication-title">AutoTestX – Scalable Selenium-TestNG Framework with CI/CD + ExtentReports</div>
+                <div class="publication-venue">Medium & IEEE Collabratec</div>
+                <p>Introduced a reusable Selenium-TestNG framework integrated with ExtentReports and GitHub Actions, showcasing modular Page Object Model design for improved scalability.</p>
+                <div class="project-links">
+                    <a href="https://medium.com/@sankar.raj9/autotestx-df51a7e0bb51" class="project-link" target="_blank">Medium</a>
+                    <a href="https://ieee-collabratec.ieee.org" class="project-link" target="_blank">IEEE Collabratec</a>
+                </div>
+            </li>
+
+            <li class="publication-item">
+                <div class="publication-title">Retrieval-Augmented QA Assistants: Building GenQAChat-RAG-AI with LangChain</div>
+                <div class="publication-venue">Medium & IEEE Collabratec</div>
+                <p>Demonstrated the design of a RAG assistant specialized for QA engineers, combining LangChain, HuggingFace embeddings, and ChromaDB for explainable guidance.</p>
+                <div class="project-links">
+                    <a href="https://medium.com/@sankar.raj9/genqachat-rag-ai-building-a-specialized-rag-based-qa-knowledge-assistant-with-huggingface-b951e1c6a43c" class="project-link" target="_blank">Medium</a>
+                    <a href="https://ieee-collabratec.ieee.org" class="project-link" target="_blank">IEEE Collabratec</a>
+                </div>
+            </li>
+
+            <li class="publication-item">
+                <div class="publication-title">AutoBugPredictX: Predicting QA Bugs Using AI-Powered Risk Analytics</div>
+                <div class="publication-venue">Medium & IEEE Collabratec</div>
+                <p>Published a machine learning approach to forecast defect-prone modules using historical logs and test metrics, highlighting measurable reductions in defect leakage.</p>
+                <div class="project-links">
+                    <a href="https://medium.com/@sankar.raj9/autobugpredictx-predicting-qa-bugs-using-ai-powered-risk-analytics-df521715779e" class="project-link" target="_blank">Medium</a>
+                    <a href="https://ieee-collabratec.ieee.org" class="project-link" target="_blank">IEEE Collabratec</a>
+                </div>
+            </li>
+
+            <li class="publication-item">
+                <div class="publication-title">RAG4HealthQA: An AI-Powered Healthcare Q&A Assistant for Public Health Impact</div>
+                <div class="publication-venue">Medium & IEEE Collabratec</div>
+                <p>Introduced a public health Q&A assistant built on RAG principles for delivering patient-friendly, explainable answers using trusted sources from WHO, NIH, and CDC.</p>
+                <div class="project-links">
+                    <a href="https://medium.com/@sankar.raj9/rag4healthqa-an-ai-powered-healthcare-q-a-assistant-for-the-public-good-c2c1c8014937" class="project-link" target="_blank">Medium</a>
+                    <a href="https://ieee-collabratec.ieee.org" class="project-link" target="_blank">IEEE Collabratec</a>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <h2>Let's Connect</h2>
+            <p>Open to collaboration on AI-powered QA innovation, open-source projects, and advancing automation in regulated industries.</p>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/sankarraj-subramani" class="social-link" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Sankarraj-Subramani" class="social-link" target="_blank">GitHub</a>
+                <a href="https://medium.com/@sankar.raj9" class="social-link" target="_blank">Medium</a>
+                <a href="https://ieee-collabratec.ieee.org" class="social-link" target="_blank">IEEE Collabratec</a>
+            </div>
+            
+            <div class="contact-info">
+                <span>📧 Sankarraj.Subramani@united.com</span>
+                <span>📱 +1-210-992-3958</span>
+            </div>
+            
+            <p>&copy; 2025 Sankarraj Subramani. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(30, 58, 138, 0.98)';
+            } else {
+                header.style.background = 'rgba(30, 58, 138, 0.95)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and cards
+        document.querySelectorAll('.experience-item, .project-card, .skill-category, .publication-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
