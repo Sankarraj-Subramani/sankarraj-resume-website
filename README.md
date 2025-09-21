@@ -3,7 +3,7 @@
 A modern, responsive portfolio website showcasing my experience as a Sr. AI QA Automation Lead, IEEE Senior Member, and Open-Source Contributor.
 
 ## 🚀 Live Demo
-[View Live Website](https://sankarraj-subramani.github.io/resume-website)
+[View Live Website](https://sankarraj-subramani.github.io/sankarraj-resume-website/)
 
 ## 🎯 Features
 
